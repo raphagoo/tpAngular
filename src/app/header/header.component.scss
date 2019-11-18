@@ -1,0 +1,22 @@
+.menu{
+  position: relative;
+  background-color: #1976d2;
+  height: 60px;
+  width: 100%;
+}
+.menu > nav > a{
+  height: 100%;
+  display: block;
+  position: relative;
+  text-decoration: none;
+  color: white;
+  width: 20%;
+  line-height: 60px;
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-right: 1px solid white;
+}
+.menu > nav > a:hover{
+  background-color: darkblue;
+}
