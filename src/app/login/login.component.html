@@ -1,0 +1,9 @@
+<app-header></app-header>
+
+<h1>Login</h1>
+
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+  Username : <input name="username" formControlName="username">
+  Password : <input name="password" type="password" formControlName="password">
+  <button type="submit">Envoyer</button>
+</form>
