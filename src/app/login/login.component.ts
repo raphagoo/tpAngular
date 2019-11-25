@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 
 
 @Component({
@@ -9,17 +9,16 @@ import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   loginForm;
-  constructor(
-    private formBuilder: FormBuilder
-  ) {
+  constructor() {
     this.loginForm = new FormGroup({
       username: new FormControl(),
-      password: new FormControl()
+      password: new FormControl(),
+      rememberMe: new FormControl()
     });
   }
 
   onSubmit(formData) {
-    console.warn('You sent this infos : ' + formData);
+    console.warn('You sent this infos : ' , formData);
   }
 
   ngOnInit() {
