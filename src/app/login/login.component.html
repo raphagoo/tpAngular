@@ -1,17 +1,21 @@
 <h1 class="text-center">Login</h1>
 
 <form class="loginForm" [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
-  <mat-form-field style="width: 400px !important;">
+  <mat-form-field style="width: 400px;">
     <input placeholder="username" matInput name="username" type="text" formControlName="username">
     <mat-icon matPrefix>perm_identity</mat-icon>
   </mat-form-field>
   <br>
-  <mat-form-field style="width: 400px !important;">
+  <mat-form-field style="width: 400px;">
     <input matInput placeholder="password" name="password" type="password" formControlName="password">
     <mat-icon matPrefix>lock</mat-icon>
   </mat-form-field>
   <br>
   <mat-checkbox formControlName="rememberMe">Se souvenir de moi</mat-checkbox>
   <br>
-  <button mat-raised-button type="submit">Envoyer</button>
+  <button mat-raised-button color="primary" type="submit">Envoyer</button>
 </form>
+
+<div *ngIf="loading === true">
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
