@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material';
 import { HttpClient } from '@angular/common/http';
+import IUser from '../models/IUser';
 
 
 @Component({
@@ -25,15 +26,20 @@ export class LoginComponent implements OnInit {
   onSubmit(formData) {
     this.loading = true;
     this.http.get('https://jsonplaceholder.typicode.com/users?username=' + formData.username).subscribe(
-      user => {
-        this.user = user;
-        console.log(user);
+      (response: IUser[]) => {
+        console.log(response);
+        this.user = response;
         if (this.user.length > 0) {
           this.logged = true;
           this.openSnackBar('Connecté', 'Cacher');
         } else {
           this.openSnackBar('Erreur', 'Cacher');
         }
+      },
+      error => {
+        console.log(error);
+      },
+      () => {
         this.loading = false;
       }
     );
