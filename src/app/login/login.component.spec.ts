@@ -46,4 +46,9 @@ describe('LoginComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('good init', () => {
+    expect(component.logged).toBeFalsy();
+    expect(component.loading).toBeFalsy();
+  });
+
 });
