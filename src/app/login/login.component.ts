@@ -27,9 +27,8 @@ export class LoginComponent implements OnInit {
     this.loading = true;
     this.http.get('https://jsonplaceholder.typicode.com/users?username=' + formData.username).subscribe(
       (response: IUser[]) => {
-        console.log(response);
-        this.user = response;
-        if (this.user.length > 0) {
+        if (response.length > 0) {
+          this.user = response[0];
           this.logged = true;
           this.openSnackBar('Connecté', 'Cacher');
         } else {
