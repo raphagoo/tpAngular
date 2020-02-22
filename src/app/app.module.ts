@@ -13,12 +13,13 @@ import {
   MatCheckboxModule,
   MatFormFieldModule,
   MatIconModule,
-  MatInputModule,
-  MatProgressBarModule
+  MatInputModule, MatPaginatorModule,
+  MatProgressBarModule, MatTableModule
 } from '@angular/material';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {HttpClientModule} from '@angular/common/http';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ListComponent } from './list/list.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     HomeComponent,
     HeaderComponent,
     LoginComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
     MatIconModule,
     MatSnackBarModule,
     MatProgressBarModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
